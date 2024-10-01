@@ -1,0 +1,23 @@
+{
+    "name": "silecust/theme-management-bundle",
+    "description": "Theme Integration bundle for silecust web app",
+    "type": "symfony-plugin",
+    "autoload": {
+        "psr-4": {
+            "Silecust\\ThemeManagementBundle\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Ashvini",
+            "email": "2662881+cooldude77@users.noreply.github.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=8.3",
+        "symfony/framework-bundle": "7.1.*",
+        "twig/twig": "^3.0",
+        "symfony/string": "7.1.*"
+    }
+}
