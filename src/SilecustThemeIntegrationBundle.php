@@ -1,17 +1,17 @@
 <?php
 
-namespace Silecust\ThemeManagementBundle;
+namespace Silecust\ThemeIntegrationBundle;
 
-use Silecust\ThemeManagementBundle\Compiler\TwigCompilerPass;
+use Silecust\ThemeIntegrationBundle\Compiler\TwigCompilerPass;
 use Symfony\Component\Config\Definition\Configurator\DefinitionConfigurator;
 use Symfony\Component\DependencyInjection\Compiler\PassConfig;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 use Symfony\Component\HttpKernel\Bundle\AbstractBundle;
 
-class SilecustThemeManagementBundle extends AbstractBundle
+class SilecustThemeIntegrationBundle extends AbstractBundle
 {
-    public const string PLUGIN_NAME_STRING = 'silecust.theme_management';
+    public const string PLUGIN_NAME_STRING = 'silecust.theme_integration';
 
     public function getPath(): string
     {
@@ -49,12 +49,12 @@ class SilecustThemeManagementBundle extends AbstractBundle
 
         $container->import(dirname(__DIR__) . '/src/config/services.php');
         // set parameters
-        $builder->setParameter('silecust.theme_management.theme_integration_active', $config['theme_integration_active']);
+        $builder->setParameter('silecust.theme_integration.theme_integration_active', $config['theme_integration_active']);
 
         foreach ($config['theme_bundles'] as $key => $value) {
             if (isset($value['active']) && $value['active']) {
                 // theme bundle name
-                $builder->setParameter('silecust.theme_management.active_theme_bundle', $value['bundle_name']);
+                $builder->setParameter('silecust.theme_integration.active_theme_bundle', $value['bundle_name']);
 
                 $bundleList = $builder->getParameter('kernel.bundles');
 
@@ -64,7 +64,7 @@ class SilecustThemeManagementBundle extends AbstractBundle
                 $refClass = new \ReflectionClass($bundleFullName);
                 $dirname = dirname($refClass->getFileName(), 2);
 
-                $builder->setParameter('silecust.theme_management.theme_template_path',
+                $builder->setParameter('silecust.theme_integration.theme_template_path',
                     $dirname . '/templates');
 
             }

@@ -1,6 +1,6 @@
 <?php
 
-namespace Silecust\ThemeManagementBundle\Subscriber;
+namespace Silecust\ThemeIntegrationBundle\Subscriber;
 
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpFoundation\Response;

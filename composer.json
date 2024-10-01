@@ -1,10 +1,10 @@
 {
-    "name": "silecust/theme-management-bundle",
+    "name": "silecust/theme-integration-bundle",
     "description": "Theme Integration bundle for silecust web app",
     "type": "symfony-plugin",
     "autoload": {
         "psr-4": {
-            "Silecust\\ThemeManagementBundle\\": "src/"
+            "Silecust\\ThemeIntegrationBundle\\": "src/"
         }
     },
     "authors": [
